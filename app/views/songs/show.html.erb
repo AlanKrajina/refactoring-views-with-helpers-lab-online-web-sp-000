@@ -1,4 +1,14 @@
-<h1><%= link_to @song.title, song_path(@song) %></h1>
-<h3><%= display_artist(@song)%></h3>
+<ul>
+<% if @song.artist_name %>
 
-<%= link_to "All Songs", songs_path %>
+  <li><%= link_to @song.artist_name, artist_path(@song.artist) %></li>
+
+  <% else %>
+  <li><%= link_to "Add Artist", edit_song_path(@song) %></li>
+
+  <% end %>
+
+</ul>
+<br>
+
+
